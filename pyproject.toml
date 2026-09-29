@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vibecode-setup"
+version = "0.4.2"
+description = "Project context infrastructure for AI coding agents"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "VibeCode contributors"}]
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["ai", "coding-agents", "vibe-coding", "developer-tools", "agents"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Environment :: Console",
+]
+dependencies = []
+
+[project.scripts]
+vibecode = "vibecode.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+vibecode = ["templates/**/*.md"]
